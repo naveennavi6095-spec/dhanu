@@ -314,12 +314,77 @@ const modalSteps = document.getElementById("modalSteps");
 
 let filterTimer = null;
 
+const localRecipeImages = {
+  "Veg Quesadillas": "https://images.pexels.com/photos/5848697/pexels-photo-5848697.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "Bean Burrito Bowl": "https://images.pexels.com/photos/10696501/pexels-photo-10696501.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "Churros with Chocolate": "https://images.pexels.com/photos/9501468/pexels-photo-9501468.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "Mango Shrikhand": "https://images.pexels.com/photos/10645412/pexels-photo-10645412.jpeg?auto=compress&cs=tinysrgb&w=1200"
+};
+
+const cuisineFallbackImages = {
+  Indian: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1200&q=80",
+  Chinese: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=1200&q=80",
+  Italian: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80",
+  Mexican: "https://images.unsplash.com/photo-1565299585323-38174c4a6471?auto=format&fit=crop&w=1200&q=80"
+};
+
+function getPhotoFallback(recipe) {
+  return (
+    localRecipeImages[recipe.title] ||
+    cuisineFallbackImages[recipe.cuisine] ||
+    recipes.find((item) => item.cuisine === recipe.cuisine && item.id !== recipe.id)?.image ||
+    recipes.find((item) => item.mealType === recipe.mealType && item.id !== recipe.id)?.image ||
+    createFallbackImage(recipe)
+  );
+}
+
+recipes.forEach((recipe) => {
+  if (localRecipeImages[recipe.title]) {
+    recipe.image = localRecipeImages[recipe.title];
+  }
+});
+
+function createFallbackImage(recipe) {
+  const title = encodeURIComponent(recipe.title);
+  const subtitle = encodeURIComponent(`${recipe.cuisine} | ${recipe.mealType}`);
+
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+      <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#d85d32" />
+          <stop offset="100%" stop-color="#2f8b78" />
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bg)" />
+      <circle cx="210" cy="160" r="120" fill="rgba(255,255,255,0.10)" />
+      <circle cx="980" cy="640" r="160" fill="rgba(255,255,255,0.08)" />
+      <text x="80" y="620" fill="#fffaf3" font-family="Arial, sans-serif" font-size="62" font-weight="700">${title}</text>
+      <text x="80" y="690" fill="#fff3df" font-family="Arial, sans-serif" font-size="32">${subtitle}</text>
+    </svg>`
+  )}`;
+}
+
+function handleImageError(imageElement, fallbackImage, altText) {
+  imageElement.onerror = null;
+  imageElement.src = fallbackImage;
+  imageElement.alt = `${altText} placeholder`;
+}
+
 function createRecipeCard(recipe, index) {
   const ingredientPreview = recipe.ingredients.slice(0, 3).join(", ");
+  const fallbackImage = getPhotoFallback(recipe);
 
   return `
     <article class="recipe-card" style="animation-delay: ${index * 70}ms">
-      <img class="recipe-card-image" src="${recipe.image}" alt="${recipe.title}">
+      <img
+        class="recipe-card-image"
+        src="${recipe.image}"
+        alt="${recipe.title}"
+        loading="lazy"
+        data-fallback-image="${fallbackImage}"
+        data-recipe-title="${recipe.title}"
+      >
       <div class="recipe-card-body">
         <div class="recipe-card-header">
           <div>
@@ -357,6 +422,19 @@ function renderRecipes(resultSet) {
 
   noResults.classList.add("hidden");
   recipeGrid.innerHTML = resultSet.map(createRecipeCard).join("");
+  recipeGrid.querySelectorAll(".recipe-card-image").forEach((imageElement) => {
+    imageElement.addEventListener(
+      "error",
+      () => {
+        handleImageError(
+          imageElement,
+          imageElement.dataset.fallbackImage,
+          imageElement.dataset.recipeTitle || "Recipe image"
+        );
+      },
+      { once: true }
+    );
+  });
 }
 
 function matchesFilters(recipe, searchValue, cuisineValue, mealValue) {
@@ -400,6 +478,9 @@ function openRecipeModal(recipeId) {
 
   modalImage.src = recipe.image;
   modalImage.alt = recipe.title;
+  modalImage.onerror = () => {
+    handleImageError(modalImage, getPhotoFallback(recipe), recipe.title);
+  };
   modalMeta.textContent = `${recipe.cuisine} | ${recipe.mealType} | ${recipe.time}`;
   modalTitle.textContent = recipe.title;
   fillList(modalIngredients, recipe.ingredients, "li");
