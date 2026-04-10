@@ -1,154 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dishcovery - Home</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Cloud Cook is a modern recipe finder with ingredient search, cuisine filters, meal categories, dark mode, and rich recipe popups."
+  >
+  <title>Cloud Cook - Recipe Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">🍽️ Dishcovery</a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="recipes.html" class="nav-link">Recipes</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-        </div>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="loader-plate">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <p>Plating your recipe experience...</p>
+  </div>
+
+  <header class="site-header" id="home">
+    <nav class="navbar container">
+      <a class="brand" href="#home" aria-label="Cloud Cook home">
+        <span class="brand-mark">CC</span>
+        <span class="brand-copy">
+          <strong>Cloud Cook</strong>
+          <small>Recipe Finder</small>
+        </span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+          <span class="theme-toggle-icon" aria-hidden="true">Mode</span>
+          <span class="theme-toggle-text">Dark Mode</span>
+        </button>
+      </div>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Dishcovery</h1>
-            <p>Discover Amazing Recipes from Around the World</p>
-            <a href="recipes.html" class="btn btn-primary">Explore Recipes</a>
+  <main>
+    <section class="hero-section">
+      <div class="hero-backdrop"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Fresh ideas from your pantry</p>
+          <h1>Cloud Cook - Recipe Finder</h1>
+          <p class="hero-text">
+            Discover vibrant meals by ingredient, filter by cuisine or meal type, and open every recipe in a beautiful step-by-step popup.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#recipes">Explore Recipes</a>
+            <a class="button button-secondary" href="#about">Why You'll Love It</a>
+          </div>
+          <div class="hero-stats">
+            <article>
+              <strong>18</strong>
+              <span>Curated recipes</span>
+            </article>
+            <article>
+              <strong>4</strong>
+              <span>Global cuisines</span>
+            </article>
+            <article>
+              <strong>5</strong>
+              <span>Meal filters</span>
+            </article>
+          </div>
         </div>
+
+        <div class="hero-visual reveal">
+          <img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+            alt="Beautiful table spread with colorful plated food"
+          >
+          <div class="hero-floating-card">
+            <p>Featured Flavor</p>
+            <h2>Creamy pastas, spicy curries, street-style snacks, and desserts worth sharing.</h2>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Featured Section -->
-    <section class="featured">
-        <div class="container">
-            <h2>Featured Recipes</h2>
-            <div class="recipe-grid">
-                <div class="recipe-card">
-                    <div class="recipe-image">🍝</div>
-                    <h3>Spaghetti Carbonara</h3>
-                    <p>Classic Italian pasta with creamy sauce</p>
-                    <a href="recipes.html" class="btn btn-secondary">View Recipe</a>
-                </div>
-                <div class="recipe-card">
-                    <div class="recipe-image">🍣</div>
-                    <h3>Sushi Rolls</h3>
-                    <p>Fresh and delicious Japanese sushi</p>
-                    <a href="recipes.html" class="btn btn-secondary">View Recipe</a>
-                </div>
-                <div class="recipe-card">
-                    <div class="recipe-image">🌮</div>
-                    <h3>Tacos al Pastor</h3>
-                    <p>Authentic Mexican street tacos</p>
-                    <a href="recipes.html" class="btn btn-secondary">View Recipe</a>
-                </div>
+    <section class="recipes-section section" id="recipes">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Recipe Explorer</p>
+          <h2>Search by ingredient and narrow the menu instantly.</h2>
+          <p>
+            Browse a balanced mix of Indian, Chinese, Italian, and Mexican dishes with flexible filters and a clean card layout.
+          </p>
+        </div>
+
+        <div class="controls-panel reveal">
+          <div class="search-control">
+            <label for="searchInput">Search by ingredient</label>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Try paneer, tomato, basil, rice, chocolate..."
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="filter-grid">
+            <div class="filter-control">
+              <label for="cuisineFilter">Cuisine</label>
+              <select id="cuisineFilter">
+                <option value="All">All Cuisines</option>
+                <option value="Indian">Indian</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Italian">Italian</option>
+                <option value="Mexican">Mexican</option>
+              </select>
             </div>
-        </div>
-    </section>
 
-    <!-- Call to Action -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Cook?</h2>
-            <p>Browse our collection of delicious recipes and start cooking today!</p>
-            <a href="recipes.html" class="btn btn-primary">Get Started</a>
-        </div>
-    </section>
+            <div class="filter-control">
+              <label for="mealFilter">Meal Type</label>
+              <select id="mealFilter">
+                <option value="All">All Meals</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Desserts">Desserts</option>
+              </select>
+            </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Dishcovery. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+            <button class="button button-secondary filter-reset" id="resetFilters" type="button">Reset Filters</button>
+          </div>
         </div>
-    </footer>
-</body>
-</html>
-        <div class="filter-card">
-          <h3>By Meal Type</h3>
-          <ul>
-            <li>Breakfast</li>
-            <li>Lunch</li>
-            <li>Dinner</li>
-            <li>Dessert</li>
-            <li>Snacks</li>
-          </ul>
+
+        <div class="results-bar">
+          <p id="resultsCount">0 recipes found</p>
+          <div class="results-loader" id="resultsLoader" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="recipe-grid" id="recipeGrid" aria-live="polite"></div>
+
+        <div class="no-results hidden" id="noResults">
+          <h3>No results found</h3>
+          <p>Try a different ingredient or reset the filters to see more delicious options.</p>
         </div>
       </div>
     </section>
 
-    <section id="recipes" class="section recipe-section hidden">
-      <div class="section-header">
-        <h2>Recipe picks</h2>
-        <p>Browse curated recipes that match the most popular combinations.</p>
-      </div>
-      <div class="recipe-grid">
-        <article class="recipe-card">
-          <div class="card-image chicken"></div>
-          <div class="card-content">
-            <p class="tag">Italian • Dinner</p>
-            <h3>Garlic Chicken Pasta</h3>
-            <p>Juicy chicken, roasted garlic, and fresh herbs tossed with pasta for a cozy weeknight meal.</p>
-          </div>
-        </article>
-        <article class="recipe-card">
-          <div class="card-image avocado"></div>
-          <div class="card-content">
-            <p class="tag">Mexican • Lunch</p>
-            <h3>Avocado Black Bean Tacos</h3>
-            <p>Creamy avocado, zesty lime, and spiced black beans wrapped in warm tortillas.</p>
-          </div>
-        </article>
-        <article class="recipe-card">
-          <div class="card-image tomato"></div>
-          <div class="card-content">
-            <p class="tag">Mediterranean • Dinner</p>
-            <h3>Tomato Feta Shakshuka</h3>
-            <p>Rich tomato sauce, crumbled feta, and gently poached eggs for a satisfying dinner.</p>
-          </div>
-        </article>
-        <article class="recipe-card">
-          <div class="card-image quinoa"></div>
-          <div class="card-content">
-            <p class="tag">Healthy • Lunch</p>
-            <h3>Quinoa Veggie Bowl</h3>
-            <p>Colorful roasted vegetables, quinoa, and a lemon tahini drizzle for a bright nourishing bowl.</p>
-          </div>
-        </article>
-        <article class="recipe-card">
-          <div class="card-image dessert"></div>
-          <div class="card-content">
-            <p class="tag">Dessert • Sweet</p>
-            <h3>Berry Yogurt Parfait</h3>
-            <p>Layered berries, creamy yogurt, and crunchy granola for a fresh and easy dessert.</p>
-          </div>
-        </article>
+    <section class="about-section section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">About Cloud Cook</p>
+          <h2>A polished static recipe site built for smooth discovery.</h2>
+          <p>
+            Cloud Cook is designed to feel modern, fast, and visual while staying lightweight enough for easy static hosting on AWS S3.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card reveal">
+            <h3>Modern Visual Style</h3>
+            <p>Layered gradients, soft shadows, animated reveals, and strong spacing create a premium feel across devices.</p>
+          </article>
+          <article class="about-card reveal">
+            <h3>Smart Filtering</h3>
+            <p>Search ingredient keywords, switch cuisines, and refine by meal type without page reloads.</p>
+          </article>
+          <article class="about-card reveal">
+            <h3>Static Hosting Ready</h3>
+            <p>Everything runs with plain HTML, CSS, and JavaScript, which makes deployment to AWS S3 straightforward.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>Made with love for easy recipe discovery.</p>
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <h2>Cloud Cook</h2>
+        <p>Recipe inspiration with responsive design, quick filtering, and a calm browsing experience for food lovers.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Social</h3>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.pinterest.com/" target="_blank" rel="noreferrer">Pinterest</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube</a>
+      </div>
+    </div>
   </footer>
+
+  <div class="modal hidden" id="recipeModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close recipe popup">×</button>
+      <img class="modal-image" id="modalImage" src="" alt="">
+      <div class="modal-content">
+        <p class="modal-meta" id="modalMeta"></p>
+        <h3 id="modalTitle"></h3>
+        <div class="modal-layout">
+          <div>
+            <h4>Ingredients</h4>
+            <ul id="modalIngredients"></ul>
+          </div>
+          <div>
+            <h4>Steps</h4>
+            <ol id="modalSteps"></ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
