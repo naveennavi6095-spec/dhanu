@@ -1,183 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dishcovery - Recipes</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the CloudCook recipe collection by meal type and ingredient.">
+  <title>CloudCook | Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">🍽️ Dishcovery</a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="recipes.html" class="nav-link active">Recipes</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
+<body data-page="recipes">
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a class="brand" href="index.html">
+          <img src="images/cloudcook-logo.svg" alt="CloudCook logo">
+          <span>CloudCook</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a class="active" href="recipes.html">Recipes</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
         </div>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Our Recipes</h1>
-            <p>Discover a world of delicious recipes to cook at home</p>
-        </div>
+  <main>
+    <section class="page-hero compact">
+      <div class="container page-hero-inner reveal">
+        <span class="eyebrow">Recipe Library</span>
+        <h1>Find your next favorite meal.</h1>
+        <p>Browse 18 beautifully presented recipes, search by ingredient or name, and filter by the meal category that matches the moment.</p>
+      </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="container">
-            <h2>Filter Recipes</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Italian</button>
-                <button class="filter-btn">Asian</button>
-                <button class="filter-btn">Mexican</button>
-                <button class="filter-btn">Vegetarian</button>
-            </div>
+    <section class="section filters-shell">
+      <div class="container">
+        <div class="filters-toolbar reveal">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="recipeSearch" type="search" placeholder="Search recipes or ingredients">
+          </div>
+          <div class="filter-pills" id="categoryFilters">
+            <button class="filter-pill active" data-category="All" type="button">All</button>
+            <button class="filter-pill" data-category="Breakfast" type="button">Breakfast</button>
+            <button class="filter-pill" data-category="Lunch" type="button">Lunch</button>
+            <button class="filter-pill" data-category="Dinner" type="button">Dinner</button>
+            <button class="filter-pill" data-category="Snacks" type="button">Snacks</button>
+            <button class="filter-pill" data-category="Desserts" type="button">Desserts</button>
+            <button class="filter-pill" data-category="Healthy" type="button">Healthy</button>
+          </div>
         </div>
+
+        <div class="results-bar reveal">
+          <p id="resultsLabel">18 recipes available</p>
+        </div>
+
+        <div class="recipe-grid" id="recipesGrid"></div>
+        <div class="empty-state hidden" id="emptyState">
+          <i class="fa-regular fa-face-frown-open"></i>
+          <h2>No recipes matched that search.</h2>
+          <p>Try another ingredient or switch to a different category.</p>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Recipes Grid -->
-    <section class="recipes-section">
-        <div class="container">
-            <div class="recipes-grid">
-                <!-- Recipe 1 -->
-                <div class="recipe-item">
-                    <div class="recipe-img">🍝</div>
-                    <div class="recipe-info">
-                        <h3>Spaghetti Carbonara</h3>
-                        <p class="cuisine">Italian</p>
-                        <div class="recipe-meta">
-                            <span>⏱️ 20 min</span>
-                            <span>👥 4 servings</span>
-                        </div>
-                        <p class="description">A creamy Italian pasta dish made with eggs, cheese, and pancetta</p>
-                        <div class="recipe-tags">
-                            <span class="tag">Pasta</span>
-                            <span class="tag">Quick</span>
-                        </div>
-                        <button class="btn btn-outline">View Recipe</button>
-                    </div>
-                </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html">
+          <img src="images/cloudcook-logo.svg" alt="CloudCook logo">
+          <span>CloudCook</span>
+        </a>
+        <p>Curated recipe browsing with a modern, airy interface.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 
-                <!-- Recipe 2 -->
-                <div class="recipe-item">
-                    <div class="recipe-img">🍣</div>
-                    <div class="recipe-info">
-                        <h3>Sushi Rolls</h3>
-                        <p class="cuisine">Japanese</p>
-                        <div class="recipe-meta">
-                            <span>⏱️ 30 min</span>
-                            <span>👥 2 servings</span>
-                        </div>
-                        <p class="description">Fresh and delicious sushi rolls with salmon and vegetables</p>
-                        <div class="recipe-tags">
-                            <span class="tag">Seafood</span>
-                            <span class="tag">Healthy</span>
-                        </div>
-                        <button class="btn btn-outline">View Recipe</button>
-                    </div>
-                </div>
-
-                <!-- Recipe 3 -->
-                <div class="recipe-item">
-                    <div class="recipe-img">🌮</div>
-                    <div class="recipe-info">
-                        <h3>Tacos al Pastor</h3>
-                        <p class="cuisine">Mexican</p>
-                        <div class="recipe-meta">
-                            <span>⏱️ 25 min</span>
-                            <span>👥 4 servings</span>
-                        </div>
-                        <p class="description">Authentic Mexican street tacos with marinated pork and pineapple</p>
-                        <div class="recipe-tags">
-                            <span class="tag">Pork</span>
-                            <span class="tag">Street Food</span>
-                        </div>
-                        <button class="btn btn-outline">View Recipe</button>
-                    </div>
-                </div>
-
-                <!-- Recipe 4 -->
-                <div class="recipe-item">
-                    <div class="recipe-img">🥗</div>
-                    <div class="recipe-info">
-                        <h3>Greek Salad</h3>
-                        <p class="cuisine">Mediterranean</p>
-                        <div class="recipe-meta">
-                            <span>⏱️ 10 min</span>
-                            <span>👥 2 servings</span>
-                        </div>
-                        <p class="description">Fresh and vibrant salad with feta cheese, olives, and olive oil</p>
-                        <div class="recipe-tags">
-                            <span class="tag">Vegetarian</span>
-                            <span class="tag">Healthy</span>
-                        </div>
-                        <button class="btn btn-outline">View Recipe</button>
-                    </div>
-                </div>
-
-                <!-- Recipe 5 -->
-                <div class="recipe-item">
-                    <div class="recipe-img">🍔</div>
-                    <div class="recipe-info">
-                        <h3>Gourmet Burgers</h3>
-                        <p class="cuisine">American</p>
-                        <div class="recipe-meta">
-                            <span>⏱️ 15 min</span>
-                            <span>👥 4 servings</span>
-                        </div>
-                        <p class="description">Delicious homemade burgers with fresh toppings and special sauce</p>
-                        <div class="recipe-tags">
-                            <span class="tag">Beef</span>
-                            <span class="tag">Casual</span>
-                        </div>
-                        <button class="btn btn-outline">View Recipe</button>
-                    </div>
-                </div>
-
-                <!-- Recipe 6 -->
-                <div class="recipe-item">
-                    <div class="recipe-img">🥘</div>
-                    <div class="recipe-info">
-                        <h3>Chicken Curry</h3>
-                        <p class="cuisine">Indian</p>
-                        <div class="recipe-meta">
-                            <span>⏱️ 40 min</span>
-                            <span>👥 6 servings</span>
-                        </div>
-                        <p class="description">Aromatic and flavorful curry with tender chicken and warm spices</p>
-                        <div class="recipe-tags">
-                            <span class="tag">Spicy</span>
-                            <span class="tag">Chicken</span>
-                        </div>
-                        <button class="btn btn-outline">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Dishcovery. All rights reserved. | <a href="contact.html">Contact Us</a></p>
-        </div>
-    </footer>
+  <script src="js/recipes.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

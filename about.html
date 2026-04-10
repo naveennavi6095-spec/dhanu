@@ -1,129 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dishcovery - About Us</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn more about CloudCook and its mission to make cooking approachable.">
+  <title>CloudCook | About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">🍽️ Dishcovery</a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link active">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="recipes.html" class="nav-link">Recipes</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
+<body data-page="about">
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a class="brand" href="index.html">
+          <img src="images/cloudcook-logo.svg" alt="CloudCook logo">
+          <span>CloudCook</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="recipes.html">Recipes</a>
+          <a class="active" href="about.html">About</a>
+          <a href="contact.html">Contact</a>
         </div>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>About Dishcovery</h1>
-            <p>Learn more about our mission to bring delicious recipes to your kitchen</p>
-        </div>
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-inner reveal">
+        <span class="eyebrow">About CloudCook</span>
+        <h1>Helping people cook with confidence and style.</h1>
+        <p>CloudCook was designed to make recipe discovery feel clear, calm, and inspiring for everyday home cooks.</p>
+      </div>
     </section>
 
-    <!-- Main Content -->
-    <section class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <h2>Our Story</h2>
-                <p>
-                    Dishcovery was founded with a simple mission: to make cooking fun, accessible, and inspiring for everyone. 
-                    Whether you're a beginner cook or an experienced chef, we believe that everyone deserves to discover delicious recipes 
-                    that match their taste preferences and dietary needs.
-                </p>
-                <p>
-                    Our platform brings together recipes from around the world, making it easy to explore new cuisines and cooking styles. 
-                    We're passionate about helping you create memorable meals for yourself and your loved ones.
-                </p>
-            </div>
+    <section class="section">
+      <div class="container about-layout">
+        <div class="about-copy reveal">
+          <h2>Our mission</h2>
+          <p>CloudCook exists to make recipe browsing less overwhelming and more delightful. Instead of cluttered layouts and dense walls of text, we focus on strong imagery, thoughtful structure, and recipes people can actually imagine cooking.</p>
+          <p>Whether someone is searching for a quick breakfast, a healthier lunch, or a celebratory dessert, CloudCook helps them move from inspiration to action without friction.</p>
         </div>
+        <div class="about-image reveal">
+          <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80" alt="Home cook plating food in a bright kitchen">
+        </div>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <h2>Why Choose Dishcovery?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Global Recipes</h3>
-                    <p>Explore cuisines from every corner of the world</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
-                    <h3>Quick & Easy</h3>
-                    <p>Find recipes that fit your schedule</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>Healthy Options</h3>
-                    <p>Discover nutritious meals for a healthier lifestyle</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍🍳</div>
-                    <h3>Expert Tips</h3>
-                    <p>Learn from experienced chefs and food enthusiasts</p>
-                </div>
-            </div>
+    <section class="section muted-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">What Matters Here</span>
+          <h2>A recipe platform built around clarity.</h2>
         </div>
+        <div class="info-grid">
+          <article class="info-card reveal">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h3>Easy discovery</h3>
+            <p>Search by name or ingredient and narrow results with intuitive category filters.</p>
+          </article>
+          <article class="info-card reveal">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Beautiful structure</h3>
+            <p>Card layouts, generous whitespace, and polished typography keep every page readable.</p>
+          </article>
+          <article class="info-card reveal">
+            <i class="fa-solid fa-bolt"></i>
+            <h3>Fast and lightweight</h3>
+            <p>Built with plain HTML, CSS, and JavaScript so the experience stays simple and portable.</p>
+          </article>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="container">
-            <h2>Our Team</h2>
-            <p class="section-subtitle">Meet the passionate people behind Dishcovery</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-avatar">👩‍🔬</div>
-                    <h3>Sarah Chef</h3>
-                    <p>Founder & Recipe Director</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">👨‍💼</div>
-                    <h3>Marcus Lee</h3>
-                    <p>Content Manager</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">👩‍🎨</div>
-                    <h3>Elena Design</h3>
-                    <p>UI/UX Designer</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html">
+          <img src="images/cloudcook-logo.svg" alt="CloudCook logo">
+          <span>CloudCook</span>
+        </a>
+        <p>Helping users find recipes easily, beautifully, and confidently.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Call to Action -->
-    <section class="cta">
-        <div class="container">
-            <h2>Start Your Culinary Journey Today</h2>
-            <p>Join thousands of food lovers discovering amazing recipes every day</p>
-            <a href="recipes.html" class="btn btn-primary">Browse Recipes</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Dishcovery. All rights reserved. | <a href="contact.html">Contact Us</a></p>
-        </div>
-    </footer>
+  <script src="js/recipes.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
