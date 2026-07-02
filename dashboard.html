@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Cloud Cook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="dashboard-page">
+  <header class="site-header dashboard-header">
+    <nav class="navbar container">
+      <a class="brand" href="/">
+        <span class="brand-mark">CC</span>
+        <span class="brand-copy">
+          <strong>Cloud Cook</strong>
+          <small>Recipe Finder</small>
+        </span>
+      </a>
+
+      <div class="nav-menu auth-nav-menu">
+        <a href="/">Home</a>
+        <button class="button button-secondary dashboard-logout" id="logoutButton" type="button">Log Out</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="dashboard-shell container">
+    <section class="dashboard-hero">
+      <p class="eyebrow">Dashboard</p>
+      <h1 id="dashboardTitle">Welcome back.</h1>
+      <p id="dashboardSubtitle">
+        Your session is active. You can now continue exploring recipes from a protected page.
+      </p>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="dashboard-card">
+        <h2>Account details</h2>
+        <p><strong>Name:</strong> <span id="accountName">Loading...</span></p>
+        <p><strong>Email:</strong> <span id="accountEmail">Loading...</span></p>
+      </article>
+
+      <article class="dashboard-card">
+        <h2>What’s included</h2>
+        <ul class="auth-benefits compact">
+          <li>Login and registration forms</li>
+          <li>Password validation</li>
+          <li>Session authentication</li>
+          <li>JSON-based user storage</li>
+        </ul>
+      </article>
+
+      <article class="dashboard-card dashboard-card-wide">
+        <h2>Next stop</h2>
+        <p>
+          Head back to the main site and keep browsing the Cloud Cook recipe collection with your authenticated session.
+        </p>
+        <a class="button button-primary" href="/#recipes">Explore recipes</a>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

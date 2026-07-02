@@ -239,6 +239,12 @@ body.dark-mode .page-loader {
   gap: 1rem;
 }
 
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
 .nav-menu a {
   font-weight: 600;
   color: var(--muted);

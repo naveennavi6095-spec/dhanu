@@ -21,7 +21,7 @@ const recipes = [
     cuisine: "Indian",
     mealType: "Breakfast",
     time: "40 min",
-    image: "https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&w=1200&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Rameshwaram_Cafe_Dosa.jpg/1200px-Rameshwaram_Cafe_Dosa.jpg",
     description: "Golden crisp dosa wrapped around a fragrant spiced potato filling.",
     ingredients: ["Dosa batter", "Potatoes", "Mustard seeds", "Curry leaves", "Onion", "Turmeric", "Green chili"],
     steps: [
@@ -285,6 +285,102 @@ const recipes = [
       "Spread pesto over toasted bread.",
       "Layer vegetables, tomato, and mozzarella between the slices.",
       "Press lightly, slice, and serve warm or cold."
+    ]
+  },
+  {
+    id: 19,
+    title: "Palak Paneer",
+    cuisine: "Indian",
+    mealType: "Dinner",
+    time: "40 min",
+    image: "https://images.unsplash.com/photo-1517244683847-7456b63c5969?auto=format&fit=crop&w=1200&q=80",
+    description: "Soft paneer cubes simmered in a silky spinach gravy scented with garlic and warm spices.",
+    ingredients: ["Paneer", "Spinach", "Onion", "Garlic", "Green chili", "Cream", "Garam masala"],
+    steps: [
+      "Blanch spinach briefly, cool it, and blend into a smooth puree.",
+      "Cook onion, garlic, and green chili until soft, then stir in spices.",
+      "Add the spinach puree and simmer until glossy and aromatic.",
+      "Fold in paneer cubes and a splash of cream, then serve with naan or rice."
+    ]
+  },
+  {
+    id: 20,
+    title: "Veg Manchurian",
+    cuisine: "Chinese",
+    mealType: "Snacks",
+    time: "35 min",
+    image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80",
+    description: "Crispy vegetable dumplings tossed in a savory-spicy garlic soy sauce.",
+    ingredients: ["Cabbage", "Carrot", "Spring onion", "Cornflour", "Soy sauce", "Garlic", "Chili sauce"],
+    steps: [
+      "Mix finely chopped vegetables with flour and seasonings, then shape into small balls.",
+      "Fry or bake the balls until golden and crisp.",
+      "Cook garlic, soy sauce, chili sauce, and a little water into a glossy sauce.",
+      "Toss the vegetable balls in the sauce and finish with spring onion greens."
+    ]
+  },
+  {
+    id: 21,
+    title: "Mushroom Risotto",
+    cuisine: "Italian",
+    mealType: "Dinner",
+    time: "45 min",
+    image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=1200&q=80",
+    description: "Creamy arborio rice layered with sauteed mushrooms, parmesan, and herbs.",
+    ingredients: ["Arborio rice", "Mushrooms", "Onion", "Garlic", "Vegetable stock", "Parmesan", "Butter"],
+    steps: [
+      "Saute onion and garlic in butter until soft, then add sliced mushrooms.",
+      "Stir in arborio rice and toast it lightly for a minute.",
+      "Add warm stock gradually, stirring often until the rice turns creamy and tender.",
+      "Finish with parmesan, black pepper, and a small knob of butter before serving."
+    ]
+  },
+  {
+    id: 22,
+    title: "Caprese Pasta Salad",
+    cuisine: "Italian",
+    mealType: "Lunch",
+    time: "20 min",
+    image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=80",
+    description: "A bright chilled pasta salad with cherry tomatoes, mozzarella, basil, and olive oil.",
+    ingredients: ["Pasta", "Cherry tomatoes", "Mozzarella", "Basil", "Olive oil", "Balsamic glaze", "Black pepper"],
+    steps: [
+      "Cook pasta until al dente, then cool it under running water.",
+      "Toss the pasta with halved tomatoes, mozzarella, and torn basil leaves.",
+      "Dress with olive oil, a touch of balsamic glaze, salt, and pepper.",
+      "Chill briefly or serve immediately for a fresh lunch."
+    ]
+  },
+  {
+    id: 23,
+    title: "Mexican Street Corn Salad",
+    cuisine: "Mexican",
+    mealType: "Snacks",
+    time: "15 min",
+    image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=1200&q=80",
+    description: "Charred corn tossed with lime, chili, creamy dressing, and crumbled cheese.",
+    ingredients: ["Sweet corn", "Lime", "Mayonnaise", "Chili powder", "Coriander", "Cheese", "Spring onion"],
+    steps: [
+      "Char the corn in a hot pan or on a grill until lightly smoky.",
+      "Mix mayo, lime juice, chili powder, and salt into a quick dressing.",
+      "Toss the warm corn with the dressing, herbs, and spring onion.",
+      "Top with crumbled cheese and extra chili before serving."
+    ]
+  },
+  {
+    id: 24,
+    title: "Rajma Chawal",
+    cuisine: "Indian",
+    mealType: "Lunch",
+    time: "45 min",
+    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1200&q=80",
+    description: "Comforting kidney bean curry served over steamed rice with deep tomato-onion flavor.",
+    ingredients: ["Kidney beans", "Rice", "Onion", "Tomato", "Ginger", "Garlic", "Cumin"],
+    steps: [
+      "Cook onion, ginger, garlic, and cumin until fragrant, then add tomatoes and spices.",
+      "Stir in cooked kidney beans with a little water and simmer until thick.",
+      "Cook rice until fluffy and keep it warm.",
+      "Spoon the rajma over rice and finish with coriander for a hearty meal."
     ]
   }
 ];

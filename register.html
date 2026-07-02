@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Cloud Cook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+  <main class="auth-shell">
+    <section class="auth-panel auth-panel-copy">
+      <a class="brand auth-brand" href="/">
+        <span class="brand-mark">CC</span>
+        <span class="brand-copy">
+          <strong>Cloud Cook</strong>
+          <small>Recipe Finder</small>
+        </span>
+      </a>
+      <p class="eyebrow">Create account</p>
+      <h1>Start with a secure recipe dashboard.</h1>
+      <p>
+        Register with a strong password to create a session-enabled account stored in a simple JSON database.
+      </p>
+      <div class="password-rules">
+        <h3>Password rules</h3>
+        <ul class="auth-benefits compact">
+          <li>At least 8 characters</li>
+          <li>One uppercase letter</li>
+          <li>One lowercase letter</li>
+          <li>One number</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="auth-panel auth-panel-form">
+      <div class="auth-card">
+        <p class="eyebrow">Registration</p>
+        <h2>Create your account</h2>
+        <p class="auth-subcopy">Fill in your details to register and continue to the dashboard.</p>
+
+        <form id="registerForm" class="auth-form" novalidate>
+          <label for="registerName">Full name</label>
+          <input id="registerName" name="name" type="text" placeholder="Aisha Patel" required>
+
+          <label for="registerEmail">Email</label>
+          <input id="registerEmail" name="email" type="email" placeholder="chef@example.com" required>
+
+          <label for="registerPassword">Password</label>
+          <input id="registerPassword" name="password" type="password" placeholder="Create a strong password" required>
+
+          <p class="form-message error hidden" id="registerError" role="alert"></p>
+
+          <button class="button button-primary auth-submit" type="submit">Create Account</button>
+        </form>
+
+        <p class="auth-switch">Registration is the active entry point for this demo.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
