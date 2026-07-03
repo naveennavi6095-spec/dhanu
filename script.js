@@ -197,7 +197,7 @@ const recipes = [
     cuisine: "Indian",
     mealType: "Breakfast",
     time: "20 min",
-    image: "https://images.unsplash.com/photo-1626776876729-bab4369a5a5d?auto=format&fit=crop&w=1200&q=80",
+    image: "https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/poha.jpg",
     description: "Light flattened rice tossed with turmeric, onion, peas, and peanuts.",
     ingredients: ["Poha", "Peanuts", "Onion", "Green peas", "Turmeric", "Mustard seeds", "Lemon"],
     steps: [
